@@ -1,6 +1,7 @@
 package Tp2_Biblio.Persistence.Biblio;
 
 import Tp2_Biblio.Model.Document;
+import Tp2_Biblio.Model.Empreunt;
 import Tp2_Biblio.Model.Livre;
 import Tp2_Biblio.Model.Utilisateur;
 
@@ -12,4 +13,6 @@ public interface BibliothequeDaoJpa {
     Utilisateur saveUser(Utilisateur user);
     Document saveDocument(Document document);
     List<Livre>  recherchePar(String critereRecherche, String data);
+    Empreunt empreunter(long idUser, Document document);
+    <T> void merge(T t);
 }

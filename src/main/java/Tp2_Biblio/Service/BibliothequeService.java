@@ -34,25 +34,30 @@ public class BibliothequeService {
         return bibliothequeDaoJpa.saveUser(user);
     }
 
-    public Document addDocumentToBiblio(String titre, int anneePub, String auteur , String editeur, String maisonDePublication, String type, String duration, String typeDocument) {
+    public Document addDocumentToBiblio(String titre, int anneePub, String auteur , String editeur, String maisonDePublication, String type, String duration,long nbrExemplaires, String typeDocument) {
         Document document = null;
-        switch (typeDocument.toUpperCase()){
+        switch (typeDocument.toUpperCase()) {
             case "LIVRE":
-                document = new Livre(titre,anneePub,auteur,editeur,maisonDePublication,type);
+                document = new Livre(titre,anneePub,auteur,nbrExemplaires,editeur,maisonDePublication,type);
                 break;
             case "CD":
-                document = new Cd(titre,anneePub,auteur,duration,type);
+                document = new Cd(titre, anneePub, auteur, nbrExemplaires,duration, type);
                 break;
             case "DVD":
-                document = new Dvd(titre,anneePub,auteur,duration,type);
+                document = new Dvd(titre, anneePub, auteur,nbrExemplaires, duration, type);
                 break;
         }
         bibliotheque.addDocument(document);
         document.setBibliotheque(bibliotheque);
+        document.setNbrExemplaire(nbrExemplaires);
         return bibliothequeDaoJpa.saveDocument(document);
     }
 
     public List<Livre> findLivreBy(String critereRecherche, String data) {
         return bibliothequeDaoJpa.recherchePar(critereRecherche,data);
+    }
+
+    public Empreunt empreunter(long idUser, Document document) {
+        return bibliothequeDaoJpa.empreunter(idUser,document);
     }
 }

@@ -18,11 +18,13 @@ public class Document {
     private String titre;
     private int anneePublication;
     private String auteur;
+    private long nbrExemplaire;
 
-    public Document(String titre, int anneePub, String auteur) {
+    public Document(String titre, int anneePub, String auteur, long nbrExemplaire) {
         this.titre = titre;
         this.anneePublication = anneePub;
         this.auteur = auteur;
+        this.nbrExemplaire = nbrExemplaire;
     }
 
 
@@ -30,6 +32,7 @@ public class Document {
     @JoinColumn(name = "fk_biblio_document")
     @ToString.Exclude
     private Bibliotheque bibliotheque;
+
 
     public void setBibliotheque(Bibliotheque bibliotheque) {
         this.bibliotheque = bibliotheque;
