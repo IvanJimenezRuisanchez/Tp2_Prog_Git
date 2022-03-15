@@ -2,6 +2,7 @@ package Tp2_Biblio.Model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -24,8 +25,10 @@ public class Document {
         this.auteur = auteur;
     }
 
+
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "fk_biblio_document")
+    @ToString.Exclude
     private Bibliotheque bibliotheque;
 
     public void setBibliotheque(Bibliotheque bibliotheque) {

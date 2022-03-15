@@ -21,11 +21,20 @@ public class MainBiblio {
         bibliothequeService.addDocumentToBiblio("Les fables de la Fontaine", 1992,"Fontaine",
                 "Frct","Fr-Medi-Cal","Roman",null,"Livre");
 
+        bibliothequeService.addDocumentToBiblio("Les fables de la Fontaine2", 1952,"Fontaine",
+                "Frct","Fr-Medi-Cal","Magazine",null,"Livre");
+
         bibliothequeService.addDocumentToBiblio("Fast and Furious: Tokyo Drift",2006,"Neal H. Moritz",null,
                 null,"Action","1h 44m","CD");
 
         bibliothequeService.addDocumentToBiblio("Fast and Furious: Tokyo Drift",2006,"Neal H. Moritz",null,
                 null,"Action","1h 44m","DVD");
+
+
+        bibliothequeService.findLivreBy("Titre","fables");
+        bibliothequeService.findLivreBy("anNee","1952");
+        bibliothequeService.findLivreBy("catEgorie","magazine");
+        bibliothequeService.findLivreBy("auteUr", "Fontaine");
 
     }
 }

@@ -3,6 +3,7 @@ package Tp2_Biblio.Model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -24,6 +25,7 @@ public class Bibliotheque {
         this.address = address;
         this.dateFundation = dateFundation;
     }
+
 
     @OneToMany
     List<Utilisateur> users = new ArrayList<>();

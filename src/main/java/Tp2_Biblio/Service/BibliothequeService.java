@@ -5,6 +5,7 @@ import Tp2_Biblio.Model.*;
 import Tp2_Biblio.Persistence.Biblio.BibliothequeDaoJpa;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class BibliothequeService {
     private BibliothequeDaoJpa bibliothequeDaoJpa;
@@ -49,5 +50,9 @@ public class BibliothequeService {
         bibliotheque.addDocument(document);
         document.setBibliotheque(bibliotheque);
         return bibliothequeDaoJpa.saveDocument(document);
+    }
+
+    public List<Livre> findLivreBy(String critereRecherche, String data) {
+        return bibliothequeDaoJpa.recherchePar(critereRecherche,data);
     }
 }
