@@ -63,6 +63,17 @@ public class BibliothequeDaoJPAH2 implements BibliothequeDaoJpa {
         }
     }
 
+    @Override
+    public List<Empreunt> getListEmpreunts(long idUser) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        TypedQuery<Empreunt> query = em.createQuery("SELECT e from Empreunt e Where e.client.id = :idUser "
+                ,Empreunt.class).setParameter("idUser", idUser);
+        List<Empreunt> empreunts = query.getResultList();
+        em.close();
+        return empreunts;
+    }
+
 
     @Override
     public <T> void save(T t) {

@@ -60,4 +60,8 @@ public class BibliothequeService {
     public Empreunt empreunter(long idUser, Document document) {
         return bibliothequeDaoJpa.empreunter(idUser,document);
     }
+
+    public List<Empreunt> getListEmpreunts(long idUser) {
+        return bibliothequeDaoJpa.getListEmpreunts(idUser);
+    }
 }

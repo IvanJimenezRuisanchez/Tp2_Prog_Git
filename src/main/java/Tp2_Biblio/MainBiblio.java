@@ -45,6 +45,6 @@ public class MainBiblio {
         bibliothequeService.empreunter(client.getIdUser(),cd);
         bibliothequeService.empreunter(client.getIdUser(),dvd);
 
-
+        bibliothequeService.getListEmpreunts(client.getIdUser());
     }
 }

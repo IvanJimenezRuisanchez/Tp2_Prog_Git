@@ -10,9 +10,15 @@ import java.util.List;
 
 public interface BibliothequeDaoJpa {
     <T> void save(T t);
-    Utilisateur saveUser(Utilisateur user);
-    Document saveDocument(Document document);
-    List<Livre>  recherchePar(String critereRecherche, String data);
-    Empreunt empreunter(long idUser, Document document);
     <T> void merge(T t);
+
+    Utilisateur saveUser(Utilisateur user);
+
+    Document saveDocument(Document document);
+
+    List<Livre>  recherchePar(String critereRecherche, String data);
+
+    Empreunt empreunter(long idUser, Document document);
+
+    List<Empreunt>getListEmpreunts(long idUser);
 }
