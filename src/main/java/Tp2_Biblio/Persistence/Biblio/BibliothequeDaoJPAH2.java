@@ -1,5 +1,6 @@
 package Tp2_Biblio.Persistence.Biblio;
 
+import Tp2_Biblio.Model.Document;
 import Tp2_Biblio.Model.Utilisateur;
 
 import javax.persistence.EntityManager;
@@ -13,6 +14,12 @@ public class BibliothequeDaoJPAH2 implements BibliothequeDaoJpa {
     public Utilisateur saveUser(Utilisateur user) {
         save(user);
         return user;
+    }
+
+    @Override
+    public Document saveDocument(Document document) {
+        save(document);
+        return document;
     }
 
     public <T> void save(T t) {

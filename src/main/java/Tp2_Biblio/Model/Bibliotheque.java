@@ -32,5 +32,11 @@ public class Bibliotheque {
         users.add(user);
     }
 
+    @OneToMany
+    List<Document> documents = new ArrayList<>();
+
+    public void addDocument(Document document) {
+        documents.add(document);
+    }
 
 }

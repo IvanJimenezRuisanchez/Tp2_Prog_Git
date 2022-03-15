@@ -18,6 +18,14 @@ public class MainBiblio {
         bibliothequeService.addUserToBliblio("Robin","Makucv","4566 Rue St-Rio",
                 "438-000-1000","robinKmam9@gmail.com", LocalDate.now(),"Prepose");
 
+        bibliothequeService.addDocumentToBiblio("Les fables de la Fontaine", 1992,"Fontaine",
+                "Frct","Fr-Medi-Cal","Roman",null,"Livre");
+
+        bibliothequeService.addDocumentToBiblio("Fast and Furious: Tokyo Drift",2006,"Neal H. Moritz",null,
+                null,"Action","1h 44m","CD");
+
+        bibliothequeService.addDocumentToBiblio("Fast and Furious: Tokyo Drift",2006,"Neal H. Moritz",null,
+                null,"Action","1h 44m","DVD");
 
     }
 }

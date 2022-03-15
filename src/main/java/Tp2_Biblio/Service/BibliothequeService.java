@@ -32,4 +32,22 @@ public class BibliothequeService {
         user.setBiblio(bibliotheque);
         return bibliothequeDaoJpa.saveUser(user);
     }
+
+    public Document addDocumentToBiblio(String titre, int anneePub, String auteur , String editeur, String maisonDePublication, String type, String duration, String typeDocument) {
+        Document document = null;
+        switch (typeDocument.toUpperCase()){
+            case "LIVRE":
+                document = new Livre(titre,anneePub,auteur,editeur,maisonDePublication,type);
+                break;
+            case "CD":
+                document = new Cd(titre,anneePub,auteur,duration,type);
+                break;
+            case "DVD":
+                document = new Dvd(titre,anneePub,auteur,duration,type);
+                break;
+        }
+        bibliotheque.addDocument(document);
+        document.setBibliotheque(bibliotheque);
+        return bibliothequeDaoJpa.saveDocument(document);
+    }
 }
