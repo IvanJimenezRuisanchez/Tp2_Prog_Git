@@ -3,12 +3,8 @@ package Tp2_Biblio.Persistence.Biblio;
 import Tp2_Biblio.Model.*;
 
 import javax.persistence.*;
-import javax.print.DocFlavor;
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class BibliothequeDaoJPAH2 implements BibliothequeDaoJpa {
     private EntityManagerFactory emf = Persistence.createEntityManagerFactory("Tp2");
